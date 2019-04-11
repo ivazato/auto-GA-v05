@@ -1,6 +1,5 @@
 package org.umssdiplo.automationv01.stepdefinitionproject;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import org.umssdiplo.automationv01.core.managepage.Login.Login;
@@ -17,5 +16,10 @@ public class StepsDefinitionPHPtravel {
     @And("^set my credentials on 'Login' page$")
     public void setMyCredentialsOnLoginPage() throws Throwable {
         login.setCredentials();
+    }
+
+    @Given("^'Machinery' page is loaded$")
+    public void machineryPageIsLoaded() throws Throwable {
+        login = LoadPage.loginPage();
     }
 }
