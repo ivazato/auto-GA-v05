@@ -16,11 +16,18 @@ public class Login extends BasePage {
     @FindBy(css = ".btn-primary.btn-block")
     private WebElement loginBtn;
 
+    @FindBy(xpath = "/html/body/app-root/app-catalog/div/mat-grid-list/div/mat-grid-tile[1]/figure/mat-nav-list/a[1]")
+    private WebElement registerBtn;
+
     public void setCredentials() {
         String username = PropertyAccessor.getInstance().getUser();
         String password = PropertyAccessor.getInstance().getPassword();
         CommonEvents.setInputField(usernameInputField, username);
         CommonEvents.setInputField(passwordInputField, password);
         CommonEvents.clickButton(loginBtn);
+    }
+
+    public void pushBtn() {
+        CommonEvents.clickButton(registerBtn);
     }
 }

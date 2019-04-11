@@ -22,4 +22,9 @@ public class StepsDefinitionPHPtravel {
     public void machineryPageIsLoaded() throws Throwable {
         login = LoadPage.loginPage();
     }
+
+    @And("^enter the machinery registration page$")
+    public void enterTheMachineryRegistrationPage() {
+        login.pushBtn();
+    }
 }
