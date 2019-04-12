@@ -13,7 +13,12 @@ public class PropertyAccessor {
 
     //Variables de Mi proyecto
     private static final String ITEM_NAME = "itemName";
-
+    private static final String CATEGORY = "category";
+    private static final String MODEL = "model";
+    private static final String BRAND = "brand";
+    private static final String CAPACITY = "capacity";
+    private static final String PRICE = "price";
+    private static final String SUBCATEGORY = "subcategory";
 
     private static PropertyAccessor PropertyAccessor;
     private Properties properties;
@@ -73,5 +78,29 @@ public class PropertyAccessor {
 
     public String getItemName() {
         return getDataProperty(ITEM_NAME);
+    }
+
+    public String getCategory() {
+        return getDataProperty(CATEGORY);
+    }
+
+    public String getModel() {
+        return getDataProperty(MODEL);
+    }
+
+    public String getBrand() {
+        return getDataProperty(BRAND);
+    }
+
+    public String getCapacity() {
+        return getDataProperty(CAPACITY);
+    }
+
+    public String getPrice() {
+        return getDataProperty(PRICE);
+    }
+
+    public String getSubcategory() {
+        return getDataProperty(SUBCATEGORY);
     }
 }
