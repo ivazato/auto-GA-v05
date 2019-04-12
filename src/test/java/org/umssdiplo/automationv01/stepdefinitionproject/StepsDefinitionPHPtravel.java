@@ -27,4 +27,9 @@ public class StepsDefinitionPHPtravel {
     public void enterTheMachineryRegistrationPage() {
         login.pushBtn();
     }
+
+    @And("^set machinery registration data$")
+    public void setMachineryRegistrationData() throws Throwable {
+        login.registerMachineryPage();
+    }
 }

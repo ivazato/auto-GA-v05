@@ -16,8 +16,15 @@ public class Login extends BasePage {
     @FindBy(css = ".btn-primary.btn-block")
     private WebElement loginBtn;
 
+    // Boton Registrar
     @FindBy(xpath = "/html/body/app-root/app-catalog/div/mat-grid-list/div/mat-grid-tile[1]/figure/mat-nav-list/a[1]")
     private WebElement registerBtn;
+
+    /* LLenado de campos de texto en el formulario de registro*/
+    @FindBy(xpath = "//*[@id=\"mat-input-0\"]")
+    private WebElement nameInputField;
+
+
 
     public void setCredentials() {
         String username = PropertyAccessor.getInstance().getUser();
@@ -29,5 +36,21 @@ public class Login extends BasePage {
 
     public void pushBtn() {
         CommonEvents.clickButton(registerBtn);
+    }
+
+    public void registerMachineryPage() {
+        String nameItem = PropertyAccessor.getInstance().getItemName();
+        /*
+        String category = PropertyAccessor.getInstance().getPassword();
+        String model = PropertyAccessor.getInstance().getUser();
+        String brand = PropertyAccessor.getInstance().getUser();
+        String capacity = PropertyAccessor.getInstance().getUser();
+        String price = PropertyAccessor.getInstance().getUser();
+        String subcategory = PropertyAccessor.getInstance().getUser();
+        */
+
+        CommonEvents.setInputField(nameInputField, nameItem);
+
+        //CommonEvents.setInputField(passwordInputField, password);
     }
 }

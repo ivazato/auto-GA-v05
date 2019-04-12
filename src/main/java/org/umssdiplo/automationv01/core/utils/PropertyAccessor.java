@@ -11,6 +11,10 @@ public class PropertyAccessor {
     private static final String USER_NAME = "username";
     private static final String PASSWORD = "password";
 
+    //Variables de Mi proyecto
+    private static final String ITEM_NAME = "itemName";
+
+
     private static PropertyAccessor PropertyAccessor;
     private Properties properties;
 
@@ -63,5 +67,11 @@ public class PropertyAccessor {
 
     public String getPassword() {
         return getDataProperty(PASSWORD);
+    }
+
+    // Getters de mi Proyecto
+
+    public String getItemName() {
+        return getDataProperty(ITEM_NAME);
     }
 }
