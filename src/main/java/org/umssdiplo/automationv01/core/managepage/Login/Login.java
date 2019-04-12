@@ -43,6 +43,10 @@ public class Login extends BasePage {
     @FindBy(xpath = "//*[@id=\"mat-input-6\"]")
     private WebElement subcategoryInputField;
 
+    //Boton Guardar
+    @FindBy(xpath = "/html/body/app-root/app-catalog/div/mat-grid-list/div/mat-grid-tile[2]/figure/app-registrar/mat-grid-list/div/form/button")
+    private WebElement guardarBtn;
+
 
     public void setCredentials() {
         String username = PropertyAccessor.getInstance().getUser();
@@ -74,5 +78,7 @@ public class Login extends BasePage {
         CommonEvents.setInputField(capacityInputField, capacity);
         CommonEvents.setInputField(priceInputField, price);
         CommonEvents.setInputField(subcategoryInputField, subcategory);
+
+        CommonEvents.clickButton(guardarBtn);
     }
 }
