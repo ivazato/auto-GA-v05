@@ -32,4 +32,31 @@ public class StepsDefinitionPHPtravel {
     public void setMachineryRegistrationData() throws Throwable {
         login.registerMachineryPage();
     }
+
+    /* Eliminar Item*/
+
+    @Given("^'MachineryRemove' catalog page is loaded$")
+    public void machineryremoveCatalogPageIsLoaded() throws Throwable {
+        login = LoadPage.loginPage();
+    }
+
+    @And("^enter the machinery Category page$")
+    public void enterTheMachineryCategoryPage() throws Throwable {
+        login.categoryBtn();
+    }
+
+    @And("^enter the bobcats page$")
+    public void enterTheBobcatsPage() throws Throwable {
+        login.bobcatsBtn();
+    }
+
+    @And("^enter the select option$")
+    public void enterTheSelectOption() throws Throwable {
+        login.selectOption();
+    }
+
+    @And("^Select the option 'Remove' from the item$")
+    public void selectTheOptionRemoveFromTheItem() {
+        login.removeBtn();
+    }
 }

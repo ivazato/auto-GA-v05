@@ -7,6 +7,9 @@ import org.umssdiplo.automationv01.core.utils.CommonEvents;
 import org.umssdiplo.automationv01.core.utils.PropertyAccessor;
 
 public class Login extends BasePage {
+
+//    public static final String MYPATH_INPUT_CONTAINS_TEXT_S = "//*[@id=\"mat-select-0\"]/div/div[2]/div";
+
     @FindBy(name = "email")
     private WebElement usernameInputField;
 
@@ -47,6 +50,20 @@ public class Login extends BasePage {
     @FindBy(xpath = "/html/body/app-root/app-catalog/div/mat-grid-list/div/mat-grid-tile[2]/figure/app-registrar/mat-grid-list/div/form/button")
     private WebElement guardarBtn;
 
+    /*  eliminar */
+
+    @FindBy(xpath = "/html/body/app-root/app-catalog/div/mat-grid-list/div/mat-grid-tile[1]/figure/mat-nav-list/a[2]")
+    private WebElement categoryBtn;
+
+    @FindBy(xpath = "/html/body/app-root/app-catalog/div/mat-grid-list/div/mat-grid-tile[2]/figure/app-category/mat-nav-list/mat-toolbar/span[1]/a")
+    private WebElement bobcatsBtn;
+
+    @FindBy(xpath = "/html/body/app-root/app-catalog/div/mat-grid-list/div/mat-grid-tile[2]/figure/app-category/mat-nav-list/div/app-bobcats/mat-grid-list/div/mat-grid-tile[1]/figure/div/mat-grid-tile-footer/mat-form-field")
+    private WebElement selectOption;
+
+    @FindBy(xpath = "//*[@id=\"mat-option-1\"]/span/button")
+    private WebElement removeItem;
+
 
     public void setCredentials() {
         String username = PropertyAccessor.getInstance().getUser();
@@ -80,5 +97,26 @@ public class Login extends BasePage {
         CommonEvents.setInputField(subcategoryInputField, subcategory);
 
         CommonEvents.clickButton(guardarBtn);
+    }
+
+    public void categoryBtn() {
+        CommonEvents.clickButton(categoryBtn);
+    }
+
+    public void bobcatsBtn() {
+        CommonEvents.clickButton(bobcatsBtn);
+    }
+
+    public void selectOption() {
+//        CommonEvents.clickButton(selectOption);
+
+        /*By by = By.xpath(String.format(MYPATH_INPUT_CONTAINS_TEXT_S, option));
+        CommonEvents.clickElement(by);*/
+
+        CommonEvents.clickButton(selectOption);
+    }
+
+    public void removeBtn() {
+        CommonEvents.clickButton(removeItem);
     }
 }
