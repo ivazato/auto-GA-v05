@@ -1,10 +1,9 @@
-Feature: Machinery
+Feature: Basic operations for the sale of machinery
 
-  Scenario: Home page is displayed once set credential in machinery page
+  Scenario: Create a new item of machinery
     Given 'Machinery' page is loaded
     And enter the machinery registration page
     And set machinery registration data
-
 
   Scenario: Remove item
     Given 'MachineryRemove' catalog page is loaded
